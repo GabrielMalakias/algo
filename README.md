@@ -19,3 +19,11 @@ Just a collection with some CS concepts implemented in Ruby
 
 ## Algorithms
 - [Dijkstra Two Stack Evaluation](https://github.com/GabrielMalakias/algo/blob/master/ruby/dijkstra_two_stack_expression_evaluation.rb)
+
+## Books
+
+- Gayle Laakmann Mcdowell (2019). Cracking the coding interview : 189 programming questions and solutions. Palo Alto, Ca: Careercup, Llc.
+
+- Sedgewick, R. and Wayne, K. (2019). Algorithms. Boston: Addison-Wesley.
+
+
