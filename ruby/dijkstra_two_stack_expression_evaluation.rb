@@ -9,25 +9,25 @@ class Eval
   end
 
   def call(expression)
-    expression = expression.split("")
+    expression = expression.split('')
 
     expression.each do |value|
       case value
-      when "(", " "
-      when "+", "-", "*", "/"
+      when '(', ' '
+      when '+', '-', '*', '/'
         @operators.push(value)
-      when ")"
-        operator = @operators.pop();
-        last_value = @values.pop();
+      when ')'
+        operator = @operators.pop
+        last_value = @values.pop
 
         case operator
-        when "+"
+        when '+'
           last_value = @values.pop + last_value
-        when "-"
+        when '-'
           last_value = @values.pop - last_value
-        when "*"
+        when '*'
           last_value = @values.pop * last_value
-        when "/"
+        when '/'
           last_value = @values.pop / last_value
         end
 
@@ -41,7 +41,6 @@ class Eval
   end
 end
 
-expr = "(1 + ((2 + 3) * (4 * 5)))"
+expr = '(1 + ((2 + 3) * (4 * 5)))'
 puts "Your expression #{expr}"
 puts "Evaluates to: #{Eval.new.call(expr)}"
-

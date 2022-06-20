@@ -11,9 +11,7 @@ class Node
 end
 
 def insert(root, value)
-  if root.nil?
-    return Node.new(value)
-  end
+  return Node.new(value) if root.nil?
 
   if root.value > value.to_i
     root.left = insert(root.left, value)
@@ -34,7 +32,7 @@ end
 
 string = '5,6,8,2,1'
 
-leafs = string.split(",")
+leafs = string.split(',')
 
 first = Node.new(leafs.pop)
 

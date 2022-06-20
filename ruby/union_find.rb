@@ -13,10 +13,10 @@ class UnionFind
     puts "Before #{@id.inspect}"
     return if pId == qId
 
-    @id.each_with_index do |value, index|
+    @id.each_with_index do |_value, index|
       @id[index] = qId if @id[index] == pId
     end
-    @count = @count - 1
+    @count -= 1
     puts "After  #{@id.inspect}"
     puts "#{@count} components"
   end

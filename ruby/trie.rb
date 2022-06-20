@@ -26,12 +26,11 @@ def search(root, chars)
   new_root = root.children[Node.index_for(char)]
 
   if new_root.nil?
-    return false
+    false
   else
     search(new_root, chars)
   end
 end
-
 
 def insert(root, chars)
   chars.each do |char|
@@ -48,9 +47,9 @@ end
 
 root = Node.new(nil)
 
-insert(root, "gabriel".split(""))
-insert(root, "give".split(""))
-insert(root, "stephani".split(""))
+insert(root, 'gabriel'.split(''))
+insert(root, 'give'.split(''))
+insert(root, 'stephani'.split(''))
 
 print(root)
 

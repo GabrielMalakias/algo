@@ -16,12 +16,12 @@ class Solution
   def call(string)
     letter_map = {}
 
-    string.split("").each do |letter|
+    string.split('').each do |letter|
       letter_map[letter] = letter_map[letter].to_i + 1
     end
 
     odd = false
-    letter_map.each do |key, value|
+    letter_map.each do |_key, value|
       next if value.even?
 
       if odd
@@ -41,22 +41,22 @@ class CheckPermutationPalindrome < Minitest::Test
   end
 
   def test_when_the_word_has_palindrome_with_even
-    assert_equal true, @solution.call("abab")
+    assert_equal true, @solution.call('abab')
   end
 
   def test_when_the_word_has_palindrome_with_odd
-    assert_equal true, @solution.call("acbba")
+    assert_equal true, @solution.call('acbba')
   end
 
   def test_whe_the_word_has_palindrome_case_1
-    assert_equal true, @solution.call("abbbcba")
+    assert_equal true, @solution.call('abbbcba')
   end
 
   def test_when_the_word_hasnt_palindrome_case_1
-    assert_equal false, @solution.call("abc")
+    assert_equal false, @solution.call('abc')
   end
 
   def test_when_word_hasnt_palindrome_case_2
-    assert_equal false, @solution.call("abbyyi")
+    assert_equal false, @solution.call('abbyyi')
   end
 end

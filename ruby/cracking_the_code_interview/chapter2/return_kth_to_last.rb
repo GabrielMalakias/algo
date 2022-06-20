@@ -27,7 +27,7 @@ class LinkedList
     node = @root
     array = []
 
-    while node != nil
+    until node.nil?
       array << node.value
 
       node = node.next_node
@@ -48,14 +48,14 @@ class Solution
     node = list.root
     index = 0
 
-    while node != nil
+    until node.nil?
       if index == kth
         list.root = node
         break
       end
 
       node = node.next_node
-      index = index + 1
+      index += 1
     end
 
     list

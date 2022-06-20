@@ -32,7 +32,7 @@ class LinkedList
     array = []
 
     node = root
-    while node != nil
+    until node.nil?
       array << node.value
 
       node = node.next_node
@@ -49,7 +49,7 @@ class Solution
     node = list.root
     previous = nil
 
-    while node != nil
+    until node.nil?
       if present[node.value].nil?
         present[node.value] = true
         previous = node

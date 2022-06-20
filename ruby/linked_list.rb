@@ -18,29 +18,25 @@ class Node
   end
 end
 
-string = "LinkedList"
+string = 'LinkedList'
 
 next_item = nil
 previous_node = nil
 first_item = nil
 
-string.split("").each do |char|
+string.split('').each do |char|
   node = Node.new(char)
 
-  if first_item.nil?
-    first_item = node
-  end
+  first_item = node if first_item.nil?
 
-  if !previous_node.nil?
-    previous_node.next = node
-  end
+  previous_node.next = node unless previous_node.nil?
 
   previous_node = node
 end
 
 node = first_item
 
-while !node.nil?
+until node.nil?
   print node
 
   node = node.next

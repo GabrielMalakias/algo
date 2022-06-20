@@ -28,11 +28,11 @@ class Solution
       different_letters << key
     end
 
-    different_letters.length > 2 ? false : true
+    !(different_letters.length > 2)
   end
 
   def count_word_letters(hash, word)
-    word.split("").each { |w| add_to_key(hash, w) }
+    word.split('').each { |w| add_to_key(hash, w) }
   end
 
   def add_to_key(hash, letter)

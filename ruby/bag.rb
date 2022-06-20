@@ -15,7 +15,7 @@ class Bag
   end
 
   def add(value)
-    @size = @size + 1
+    @size += 1
     @root = Node.new(value, @root)
   end
 
@@ -24,7 +24,7 @@ class Bag
 
     current = @root
 
-    while !current.nil?
+    until current.nil?
       acc = block.call(current.value, acc)
       current = current.next
     end
@@ -40,12 +40,10 @@ class Bag
     @root.nil?
   end
 
-  def size
-    @size
-  end
+  attr_reader :size
 
   def to_s
-    "Items: #{reduce('') { |value, acc| acc = acc << (',' << value.to_s)}}\n" \
+    "Items: #{reduce('') { |value, acc| acc = acc << (',' << value.to_s) }}\n" \
     "size: #{size}\n" \
     "sum: #{sum}"
   end
@@ -75,7 +73,7 @@ class Stats
   end
 
   def standard_deviation(mean_result, bag)
-    sum = bag.reduce(0) { |value, acc| acc = (value - mean_result) * (value - mean_result) }
+    sum = bag.reduce(0) { |value, _acc| acc = (value - mean_result) * (value - mean_result) }
     Math.sqrt(sum)
   end
 end

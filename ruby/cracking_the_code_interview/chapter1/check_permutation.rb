@@ -16,12 +16,12 @@ class Solution
 
     first_length = first_string.length
 
-    second_string_array = second_string.split("")
+    second_string_array = second_string.split('')
 
     (0..second_string_array.length).each do |index|
-      result = second_string_array.slice(index..(index + first_length)).permutation.to_a & [first_string.split("")]
+      result = second_string_array.slice(index..(index + first_length)).permutation.to_a & [first_string.split('')]
 
-      return true if !result.empty?
+      return true unless result.empty?
     end
 
     false
@@ -34,14 +34,14 @@ class CheckPermutation < Minitest::Test
   end
 
   def test_when_b_is_smaller_than_a
-    assert_equal false, @solution.call("abs", "ab")
+    assert_equal false, @solution.call('abs', 'ab')
   end
 
   def test_that_a_is_contained_within_b
-    assert_equal false, @solution.call("abc", "aljsljbslsacbsslajh")
+    assert_equal false, @solution.call('abc', 'aljsljbslsacbsslajh')
   end
 
   def test_that_a_is_not_contained_within_b
-    assert_equal false, @solution.call("abc", "bdkjkahlbahhklawsk")
+    assert_equal false, @solution.call('abc', 'bdkjkahlbahhklawsk')
   end
 end

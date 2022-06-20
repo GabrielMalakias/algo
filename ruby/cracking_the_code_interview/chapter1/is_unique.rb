@@ -11,8 +11,9 @@ class Solution
   def call(string)
     previous_char = nil
 
-    string.split("").sort.each do |char|
+    string.split('').sort.each do |char|
       return false if previous_char == char
+
       previous_char = char
     end
 
@@ -26,10 +27,10 @@ class IsUniqueTest < Minitest::Test
   end
 
   def test_that_testing_returns_false
-    assert_equal false, @solution.call("testing")
+    assert_equal false, @solution.call('testing')
   end
 
   def test_that_uniq_returns_true
-    assert_equal true, @solution.call("uniq")
+    assert_equal true, @solution.call('uniq')
   end
 end

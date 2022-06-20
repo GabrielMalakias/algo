@@ -13,21 +13,19 @@ class Solution
 
     indexes = []
 
-    string.split("").each_with_index do |char, index|
-      indexes << index if char == " "
+    string.split('').each_with_index do |char, index|
+      indexes << index if char == ' '
     end
 
     current_index = 0
-    result = ""
+    result = ''
     indexes.each do |index|
-      result = result + string[current_index..index - 1] + "%20"
+      result = result + string[current_index..index - 1] + '%20'
 
       current_index = index + 1
     end
 
-    result = result + string[current_index..string.length]
-
-    result
+    result + string[current_index..string.length]
   end
 end
 
@@ -37,10 +35,10 @@ class Urlify < Minitest::Test
   end
 
   def test_when_the_string_is_empty
-    assert_equal "", @solution.call("")
+    assert_equal '', @solution.call('')
   end
 
   def test_when_the_string_contain_spaces
-    assert_equal "John%20Doe%20Bad", @solution.call('John Doe Bad')
+    assert_equal 'John%20Doe%20Bad', @solution.call('John Doe Bad')
   end
 end

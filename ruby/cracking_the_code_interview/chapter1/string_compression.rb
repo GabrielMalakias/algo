@@ -13,7 +13,7 @@ require 'minitest/autorun'
 #
 class Solution
   def call(string)
-    compressed_string = ""
+    compressed_string = ''
     count = 0
     index = 0
 
@@ -21,13 +21,13 @@ class Solution
       previous_index = index == 0 ? 0 : index - 1
 
       if string[previous_index] == string[index]
-        count = count + 1
+        count += 1
       else
-        compressed_string =  compressed_string + "#{string[previous_index]}#{count}"
+        compressed_string += "#{string[previous_index]}#{count}"
         count = 1
       end
 
-      index = index + 1
+      index += 1
     end
 
     compressed_string.length < string.length ? compressed_string : string
