@@ -3,6 +3,8 @@ require 'minitest/autorun'
 # Write code to remote duplicates from an unsorted linked list
 # TimeComplexity O(N)
 # SpaceComplexity O(N) + O(M) Where M is the number of unique values
+#
+# Solved using hash to map if the value is present
 
 class Node
   attr_reader :value, :next_node
