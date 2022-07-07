@@ -28,7 +28,30 @@ class FindRanges
       if current_node.nil?
         current_node = Item.new(value)
       end
-     item.strip.to_i
+
+      if next_item_consecutive?(array, index)
+        number_of_items = number_of_items + 1
+      else
+        current_node.number_of_items = number_of_items
+        result << current_node
+        current_node = nil
+
+        number_of_items = 1
+      end
+    end
+
+    result.map(&:to_a)
+  end
+
+  def next_item_consecutive?(array, index)
+    return false if index == array.length - 1
+
+    array[index] == array[index + 1] - 1
+  end
+
+  def string_to_array(string)
+    string.split(', ').map do |item|
+      item.strip.to_i
     end
   end
 end
