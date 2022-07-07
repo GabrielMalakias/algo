@@ -14,7 +14,7 @@ Just a collection with some CS concepts implemented in Ruby
 - [Queue](https://github.com/GabrielMalakias/algo/blob/master/ruby/queue.rb)
 - [Graph](https://github.com/GabrielMalakias/algo/blob/master/ruby/graph.rb)
 
-## Technics
+## Techniques
 - [Sliding Windows](https://github.com/GabrielMalakias/algo/blob/master/ruby/enclosed_objects.rb)
 
 ## Algorithms
